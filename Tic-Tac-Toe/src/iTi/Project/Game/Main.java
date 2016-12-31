@@ -12,13 +12,12 @@ package iTi.Project.Game;
 public class Main {
     public static void main(String[] args) {
         
-    char XO[][] = new char[3][3];
+    char XO[] = new char[9];
    
     int player=0;
     int curr;
-    for (int i = 0; i < 3; i++)
-    for (int j = 0; j < 3; j++) 
-    XO[i][j] = '-';
+    for (int i = 0; i < 9; i++)
+    XO[i] = '-';
     
     while( !Joystic.initialize() ) {   }
     
@@ -32,8 +31,12 @@ public class Main {
         switch (Joystic.getChar()) {
             case 'X':
             case 'O':
-                UI.setCell(player+1);
-                player=~player;
+                if(XO[curr-1]=='-')
+                {
+                    XO[curr-1]=Joystic.getChar();
+                    UI.setCell(player+1);
+                    player=~player;
+                }                
                 break;
             case 'U':                
                 if( curr!=1 || curr!=2 ||curr!=3)
