@@ -43,8 +43,7 @@ public class UI extends javax.swing.JFrame {
     {
         /*
         p is parameter for player no.
-        return 1 if the game is finished
-        return 0 in the normal        
+        to set cell with the character for the player       
         */
     }
     
