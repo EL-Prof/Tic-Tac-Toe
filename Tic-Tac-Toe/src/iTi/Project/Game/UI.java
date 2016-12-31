@@ -19,7 +19,8 @@ public class UI extends javax.swing.JFrame {
     private String playerTwo="Player Two";
     private int playerOneCount=0;
     private int playerTwoCount=0;
-    
+    private int playerOneIndex ;
+    private int playerTwoIndex ;
         
     public boolean isFinished()
     {
@@ -45,6 +46,20 @@ public class UI extends javax.swing.JFrame {
         p is parameter for player no.
         to set cell with the character for the player       
         */
+        if(p == 1)
+        {
+            switch(playerOneIndex){
+                case 1 :  jButton1.setForeground(Color.pink);
+            
+            }
+        
+        }
+           
+        else
+        switch(playerOneIndex){
+                case 1 :  jButton1.setForeground(Color.gray);
+                 }
+            
     }
     
     public void selectCell(int i,int p)
@@ -53,6 +68,12 @@ public class UI extends javax.swing.JFrame {
         p is parameter for player no.
         i is parameter for the index to select a new cell using the arrows in joystic
         */
+        switch (p){
+            case 1: playerOneIndex = i ; break ; 
+            case 2 : playerTwoIndex = i ; break ;
+        
+        }
+        
     }
    
    
@@ -464,7 +485,7 @@ tieGame();
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void init(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
