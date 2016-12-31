@@ -19,6 +19,45 @@ public class UI extends javax.swing.JFrame {
     private String playerTwo="Player Two";
     private int playerOneCount=0;
     private int playerTwoCount=0;
+    
+    
+    
+    public static boolean isFinished()
+    {
+        /*
+        return true if the game finished 
+        return false in the normal
+        */
+        return false; 
+    }
+      
+        
+    
+    public static int getCell(int p)
+    {
+        /*
+        p is parameter for player no.
+        return the cell number 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 or 9
+        */
+        return 0;
+    }
+    
+    public static void setCell(int p)
+    {
+        /*
+        p is parameter for player no.
+        return 1 if the game is finished
+        return 0 in the normal        
+        */
+    }
+    
+    public static void selectCell(int i,int p)
+    {
+        /*
+        p is parameter for player no.
+        i is parameter for the index to select a new cell using the arrows in joystic
+        */
+    }
    
    
   private void setScore()
