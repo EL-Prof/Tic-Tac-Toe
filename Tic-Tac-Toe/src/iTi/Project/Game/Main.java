@@ -7,7 +7,7 @@ package iTi.Project.Game;
 
 /**
  *
- * @author Ahmed Emad el-deen
+ * @author Andrew Sadeq
  */
 public class Main {
     public static void main(String[] args) {
@@ -16,54 +16,57 @@ public class Main {
    
     int player=0;
     int curr;
+    UI frame=new UI();
+    Joystic j=new Joystic();
+    
     for (int i = 0; i < 9; i++)
     XO[i] = '-';
     
-    while( !Joystic.initialize() ) {   }
+    while( !j.initialize() ) {   }
     
     while(true)
     {
-        if( UI.isFinished() )
+        if( frame.isFinished() )
         {
             break;
         }
-        curr=UI.getCell(player+1);
-        switch (Joystic.getChar()) {
+        curr=frame.getCell(player+1);
+        switch (j.getChar()) {
             case 'X':
             case 'O':
                 if(XO[curr-1]=='-')
                 {
-                    XO[curr-1]=Joystic.getChar();
-                    UI.setCell(player+1);
+                    XO[curr-1]=j.getChar();
+                    frame.setCell(player+1);
                     player=~player;
                 }                
                 break;
             case 'U':                
                 if( curr!=1 || curr!=2 ||curr!=3)
                 {
-                    UI.selectCell( curr-3 ,player+1);
+                    frame.selectCell( curr-3 ,player+1);
                 }
                 break;
             case 'D':
                 if( curr!=7 || curr!=8 ||curr!=9)
                 {
-                    UI.selectCell( curr+3 ,player+1);
+                    frame.selectCell( curr+3 ,player+1);
                 }
                 break;
             case 'R':
                 if( curr!=3 || curr!=6 ||curr!=9)
                 {
-                    UI.selectCell( curr+1 ,player+1);
+                    frame.selectCell( curr+1 ,player+1);
                 }
                 break;
             case 'L':
                 if( curr!=1 || curr!=4 ||curr!=7)
                 {
-                    UI.selectCell( curr-3 ,player+1);
+                    frame.selectCell( curr-3 ,player+1);
                 }
                 break;
             default:
-                UI.selectCell( 0 ,player+1);
+                frame.selectCell( 0 ,player+1);
                 break;
         }
     }    

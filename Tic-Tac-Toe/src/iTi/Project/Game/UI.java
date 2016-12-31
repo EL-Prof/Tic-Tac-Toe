@@ -20,20 +20,17 @@ public class UI extends javax.swing.JFrame {
     private int playerOneCount=0;
     private int playerTwoCount=0;
     
-    
-    
-    public static boolean isFinished()
+        
+    public boolean isFinished()
     {
         /*
         return true if the game finished 
         return false in the normal
         */
         return false; 
-    }
-      
-        
+    }   
     
-    public static int getCell(int p)
+    public int getCell(int p)
     {
         /*
         p is parameter for player no.
@@ -42,7 +39,7 @@ public class UI extends javax.swing.JFrame {
         return 0;
     }
     
-    public static void setCell(int p)
+    public void setCell(int p)
     {
         /*
         p is parameter for player no.
@@ -51,7 +48,7 @@ public class UI extends javax.swing.JFrame {
         */
     }
     
-    public static void selectCell(int i,int p)
+    public void selectCell(int i,int p)
     {
         /*
         p is parameter for player no.

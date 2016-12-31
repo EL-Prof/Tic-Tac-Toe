@@ -15,7 +15,7 @@ public class Joystic {
         System.out.println("hello java tic tac toeians");
     }
     */
-    public static boolean initialize()
+    public boolean initialize()
     {
         /*
         to initialize the joystic controller
@@ -25,7 +25,7 @@ public class Joystic {
        return false; 
     }
     
-    public static char getChar()
+    public char getChar()
     {
         /*
         return the button char that the player pressed
