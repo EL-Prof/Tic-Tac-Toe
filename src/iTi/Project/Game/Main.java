@@ -32,7 +32,7 @@ public class Main {
             player=1;
             n++;
         try {
-            TimeUnit.MILLISECONDS.sleep(300);
+            TimeUnit.MILLISECONDS.sleep(100);
         } catch (InterruptedException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -151,7 +151,6 @@ public class Main {
             {
                 x=y=2; 
                 q=1;
-                System.out.println("222222222222222 222222222222222");
             }
             else if(x==2&&y==2)
             {
@@ -236,7 +235,7 @@ public class Main {
                  if(XO[j][i]=='O')
                  m++;                                            //win
                  else if(XO[j][i]=='-')                          //by
-                 {a=b=j;                                         //district
+                 {a=b=j;                                         //diagonal
                  defend=itsadefend.YES;
                  }
                  if(m==2&&defend==itsadefend.YES)
@@ -244,7 +243,7 @@ public class Main {
                  x=y=a+1;
                  //goto choice;
                     choice(x,y);
-                 //System.out.println("win by district 1");
+                 //System.out.println("win by diagonal 1");
                 continue;
                  }
                  //................................
@@ -261,7 +260,7 @@ public class Main {
                  x=a+1;y=b+1;
                  //goto choice;
                     choice(x,y);
-                 //System.out.println("win by district 2");
+                 //System.out.println("win by diagonal 2");
                  continue;
                  }
                 }                
@@ -324,9 +323,9 @@ public class Main {
                     if(m==2&&defend==itsadefend.YES)
                     {                                                       //for
                     x=y=a+1;
-                    //goto choice;                                          //destrict
+                    //goto choice;                                          //diagonal
                     choice(x,y);
-                    //System.out.println("defend for district1");
+                    //System.out.println("defend for diagonal1");
                     continue;
                     }
                     //..............................

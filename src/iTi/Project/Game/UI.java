@@ -59,8 +59,7 @@ public class UI extends javax.swing.JFrame {
     public void setIndex(int p1 , int p2)
     {
         playerOneIndex = p1 ; 
-        playerTwoIndex = p2 ; 
-    
+        playerTwoIndex = p2 ;     
     }
     
     
@@ -75,7 +74,8 @@ public class UI extends javax.swing.JFrame {
             switch(playerOneIndex){
                 case 1 :  jButton1.setText("X");
                 jButton1.setForeground(Color.pink); 
-                jPanel_1.setBackground(DefaultColor);break ;
+                jPanel_1.setBackground(DefaultColor);
+                break ;
                 case 2 :  jButton2.setText("X");
                 jButton2.setForeground(Color.pink);
                  jPanel_2.setBackground(DefaultColor);break ; 
@@ -103,7 +103,7 @@ public class UI extends javax.swing.JFrame {
                    }
             if(isSingle==0)
             {
-                playerTwoIndex = 1 ; 
+                playerTwoIndex = 1 ;
                 jPanel_1.setBackground(playerTwoColor);
             }
         }
@@ -124,7 +124,8 @@ public class UI extends javax.swing.JFrame {
                  jPanel_4.setBackground(DefaultColor);break ; 
                 case 5 :  jButton5.setText("O");
                 jButton5.setForeground(Color.gray);
-                 jPanel_5.setBackground(DefaultColor);break ; 
+                jPanel_5.setBackground(DefaultColor);
+                break ; 
                 case 6 :  jButton6.setText("O");
                 jButton6.setForeground(Color.gray);
                  jPanel_6.setBackground(DefaultColor);break ; 
@@ -143,7 +144,11 @@ public class UI extends javax.swing.JFrame {
                 playerOneIndex = 1 ; 
                 jPanel_1.setBackground(playerOneColor);
             }
-
+            else
+            {
+                jPanel_1.setBackground(DefaultColor);
+                selectCell(playerOneIndex, 1);
+            }
         }
     //     determineIfWin();
     //    tieGame();
@@ -305,8 +310,20 @@ public class UI extends javax.swing.JFrame {
         jButton9.setText("");
         if(isSingle==1)
         {
-            jPanel_1.setBackground(playerOneColor);
+            switch(playerOneIndex)
+          {
+              case 1: jPanel_1.setBackground(DefaultColor);break;
+              case 2: jPanel_2.setBackground(DefaultColor);break;
+              case 3: jPanel_3.setBackground(DefaultColor);break;
+              case 4: jPanel_4.setBackground(DefaultColor);break;
+              case 5: jPanel_5.setBackground(DefaultColor);break;
+              case 6: jPanel_6.setBackground(DefaultColor);break;
+              case 7: jPanel_7.setBackground(DefaultColor);break;
+              case 8: jPanel_8.setBackground(DefaultColor);break;
+              case 9: jPanel_9.setBackground(DefaultColor);break;
+          }
             playerOneIndex=1;
+            selectCell(playerOneIndex,1);
         }
         setScore();
         }

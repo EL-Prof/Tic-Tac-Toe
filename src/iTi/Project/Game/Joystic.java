@@ -73,7 +73,7 @@ public class Joystic {
         if(turn)   // it's player1 turn
         {
            cont[0].poll();
-            if(cont[0].isButtonPressed(2)==true )//&&flag==false )
+            if(cont[0].isButtonPressed(2)==true )
             {
                 System.out.println("Hello i'm button X from Controller.1");
                 turn = !turn ;
