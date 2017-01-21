@@ -26,7 +26,8 @@ public class UI extends javax.swing.JFrame {
     private Color playerOneColor = Color.RED ;
     private Color playerTwoColor = Color.BLUE ;
     private Color DefaultColor = Color.WHITE;
-    int test = 2; 
+    int test = 2;
+    public static int isSingle;
 
     public boolean isFinished()
     {
@@ -100,9 +101,12 @@ public class UI extends javax.swing.JFrame {
                 jButton9.setForeground(Color.pink); 
                  jPanel_9.setBackground(DefaultColor);break ; 
                    }
-            playerTwoIndex = 1 ; 
-            jPanel_1.setBackground(playerTwoColor);
-                }
+            if(isSingle==0)
+            {
+                playerTwoIndex = 1 ; 
+                jPanel_1.setBackground(playerTwoColor);
+            }
+        }
           else
         {
             switch(playerTwoIndex){
@@ -134,8 +138,12 @@ public class UI extends javax.swing.JFrame {
                 jButton9.setForeground(Color.gray);
                  jPanel_9.setBackground(DefaultColor);break ; 
                  }
-            playerOneIndex = 1 ; 
-            jPanel_1.setBackground(playerOneColor);
+            if(isSingle==0)
+            {
+                playerOneIndex = 1 ; 
+                jPanel_1.setBackground(playerOneColor);
+            }
+
         }
     //     determineIfWin();
     //    tieGame();
@@ -218,17 +226,31 @@ public class UI extends javax.swing.JFrame {
   jLabel_Score.setText(playerOne + "'s Score is :" +String.valueOf(playerOneCount)+"\t                        " + playerTwo + "'s Score is :" + String.valueOf(playerTwoCount));
   
   }
-    
+    public void singleOrMultiple()  
+  {
+        //String choose = JOptionPane.showConfirmDialog(this, "Single player or multi player", "your choose", JOptionPane.QUESTION_MESSAGE);
+        isSingle=JOptionPane.showOptionDialog(this,"Single or Multiplayer ?","",JOptionPane.OK_CANCEL_OPTION,
+                 JOptionPane.INFORMATION_MESSAGE,null, new String[]{"Multi", "Single"}/*this is the array*/,"default");
+        System.out.println(isSingle);
+  }
  
-  private void getPlayerName()
-  
+  private void getPlayerName()  
   {
       playerOne=JOptionPane.showInputDialog(this, "Player one name", "Player Name", JOptionPane.INFORMATION_MESSAGE);
-      playerTwo=JOptionPane.showInputDialog(this, "Player two name", "Player Name", JOptionPane.INFORMATION_MESSAGE);
-  if(playerOne.equals(""))
-  {playerOne = "Player One";}
-  if(playerTwo.equals(""))
-  {playerTwo = "Player Two";}
+      if(playerOne.equals(""))
+      {playerOne = "Player One";}
+      if(isSingle==0)
+      {
+          playerTwo=JOptionPane.showInputDialog(this, "Player two name", "Player Name", JOptionPane.INFORMATION_MESSAGE);
+            if(playerTwo.equals(""))
+            {playerTwo = "Player Two";}
+      }
+      else
+      {
+          playerTwo = "PC";
+      }
+        
+      
   }
 
   
@@ -238,6 +260,7 @@ public class UI extends javax.swing.JFrame {
         initComponents();
        // setSize(600,600);
         setLocationRelativeTo(null);
+        singleOrMultiple();
        getPlayerName();
   //     playerOneColor = jPanel_1.getBackground();
   //     playerTwoColor = jPanel_2.getBackground();
@@ -280,6 +303,11 @@ public class UI extends javax.swing.JFrame {
         jButton7.setText("");
         jButton8.setText("");
         jButton9.setText("");
+        if(isSingle==1)
+        {
+            jPanel_1.setBackground(playerOneColor);
+            playerOneIndex=1;
+        }
         setScore();
         }
         
