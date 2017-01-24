@@ -6,9 +6,6 @@
 package iTi.Project.Game;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -23,19 +20,13 @@ public class Main {
     public static int n=0;
     public static int player=1;
     
-    public static void choice(int x, int y)
+    private static void choice(int x, int y)
     {
-
             frame.selectCell(  3*(x-1) + y , 2);
             frame.setCell(2);
             XO[x-1][y-1]='O';
             player=1;
-            n++;
-        try {
-            TimeUnit.MILLISECONDS.sleep(100);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            n++;        
             Joystic.turn=!Joystic.turn;
             System.out.println("pc role");  
     }
@@ -54,7 +45,7 @@ public class Main {
     frame.show();
     
     Joystic stick=new Joystic();
-    frame.selectCell(1, 1);
+    frame.selectCell(1,1);
     
     for (int i = 0; i < 9; i++)
     XO[i/3][i%3] = '-' ;
@@ -64,7 +55,6 @@ public class Main {
     outerloop:
     while(true)
     {
-
         if( frame.isFinished())
         {
             System.out.println("Finished");
@@ -89,11 +79,9 @@ public class Main {
                 {
                     x=(curr-1)/3 +1;
                     y=(curr-1)%3 +1;
-                    XO[ x-1 ][ y-1 ]= 'X' ; 
-                    System.out.println(x+" "+y);
-                    frame.setCell(player);
+                    XO[ x-1 ][ y-1 ]= 'X' ;
                     System.out.println("here player 1 choice");
-                    //player=~player; //change turn  xxxxxx
+                    frame.setCell(player);
                     if (player==1)
                     {
                         player=2;                     
@@ -155,7 +143,7 @@ public class Main {
             else if(x==2&&y==2)
             {
                 for(;;) {
-                q=2;            
+                q=2;
                 x=rand.nextInt(3) + 1;
                 y=rand.nextInt(3) + 1;
                 if(x!=2&&y!=2)
@@ -201,8 +189,7 @@ public class Main {
                        //System.out.println("win by rows");
                        continue outerloop;
                     }
-                }
-    
+                }   
     
                 //.......................
                 for(int j=0;j<3;j++)
@@ -210,7 +197,7 @@ public class Main {
                     m=0;defend=itsadefend.NO;
                     for(int i=0;i<3;i++)                        //win
                     {                                           //by
-                        if(XO[i][j]=='O')                       //columes
+                        if(XO[i][j]=='O')                       //columns
                         m++;
                         else if(XO[i][j]=='-')
                         {a=i;b=j;
@@ -292,7 +279,7 @@ public class Main {
                     m=0;defend=itsadefend.NO;
                     for(int i=0;i<3;i++)                        //defend
                     {                                           //for
-                        if(XO[i][j]=='X')                       //columes
+                        if(XO[i][j]=='X')                       //columns
                         m++;
                         else if(XO[i][j]=='-')
                         {a=i;b=j;
@@ -386,7 +373,6 @@ public class Main {
                 x=3;y=1;
                 //goto choice;
                 choice(x,y);
-                continue;
                 }
                 else if(q==3&&XO[1][1]=='-')
                 {                    
@@ -401,9 +387,10 @@ public class Main {
                 if(XO[x-1][y-1]=='-')
                 {
                     //choice:
-                    System.out.println("qelse");
+                    System.out.println("qelseeeeee");
                     choice(x,y);
-                    continue outerloop;
+                    break;
+                    //continue outerloop;
                 }                
                 
                 }

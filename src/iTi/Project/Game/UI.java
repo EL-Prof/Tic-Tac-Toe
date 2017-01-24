@@ -236,22 +236,24 @@ public class UI extends javax.swing.JFrame {
         //String choose = JOptionPane.showConfirmDialog(this, "Single player or multi player", "your choose", JOptionPane.QUESTION_MESSAGE);
         isSingle=JOptionPane.showOptionDialog(this,"Single or Multiplayer ?","",JOptionPane.OK_CANCEL_OPTION,
                  JOptionPane.INFORMATION_MESSAGE,null, new String[]{"Multi", "Single"}/*this is the array*/,"default");
-        System.out.println(isSingle);
   }
  
   private void getPlayerName()  
   {
+      if(isSingle==0)
+      {
       playerOne=JOptionPane.showInputDialog(this, "Player one name", "Player Name", JOptionPane.INFORMATION_MESSAGE);
       if(playerOne.equals(""))
       {playerOne = "Player One";}
-      if(isSingle==0)
-      {
-          playerTwo=JOptionPane.showInputDialog(this, "Player two name", "Player Name", JOptionPane.INFORMATION_MESSAGE);
-            if(playerTwo.equals(""))
-            {playerTwo = "Player Two";}
+       playerTwo=JOptionPane.showInputDialog(this, "Player two name", "Player Name", JOptionPane.INFORMATION_MESSAGE);
+       if(playerTwo.equals(""))
+       {playerTwo = "Player Two";}
       }
       else
-      {
+      {          
+          playerOne=JOptionPane.showInputDialog(this, "Your name", "Player Name", JOptionPane.INFORMATION_MESSAGE);
+          if(playerOne.equals(""))
+          {playerOne = "Player One";}          
           playerTwo = "PC";
       }
         
@@ -311,7 +313,7 @@ public class UI extends javax.swing.JFrame {
         if(isSingle==1)
         {
             switch(playerOneIndex)
-          {
+            {
               case 1: jPanel_1.setBackground(DefaultColor);break;
               case 2: jPanel_2.setBackground(DefaultColor);break;
               case 3: jPanel_3.setBackground(DefaultColor);break;
@@ -321,7 +323,7 @@ public class UI extends javax.swing.JFrame {
               case 7: jPanel_7.setBackground(DefaultColor);break;
               case 8: jPanel_8.setBackground(DefaultColor);break;
               case 9: jPanel_9.setBackground(DefaultColor);break;
-          }
+            }
             playerOneIndex=1;
             selectCell(playerOneIndex,1);
         }
@@ -605,102 +607,102 @@ public class UI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-jButton7.setText(whoseTurn);
+/*jButton7.setText(whoseTurn);
 if(whoseTurn.equalsIgnoreCase("X"))
 {jButton7.setForeground(Color.pink);}
 else
 {jButton7.setForeground(Color.gray);}
 determinewhoseTurn();
 determineIfWin();
-tieGame();
+tieGame();*/
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-jButton8.setText(whoseTurn);
+/*jButton8.setText(whoseTurn);
 if(whoseTurn.equalsIgnoreCase("X"))
 {jButton8.setForeground(Color.pink);}
 else
 {jButton8.setForeground(Color.gray);}
 determinewhoseTurn();
 determineIfWin();
-tieGame();
+tieGame();*/
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-jButton9.setText(whoseTurn);
+/*jButton9.setText(whoseTurn);
 if(whoseTurn.equalsIgnoreCase("X"))
 {jButton9.setForeground(Color.pink);}
 else
 {jButton9.setForeground(Color.gray);}
 determinewhoseTurn();
 determineIfWin();
-tieGame();
+tieGame();*/
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        jButton6.setText(whoseTurn);
+        /*jButton6.setText(whoseTurn);
         if(whoseTurn.equalsIgnoreCase("X"))
         {jButton6.setForeground(Color.pink);}
         else
         {jButton6.setForeground(Color.gray);}
         determinewhoseTurn();
         determineIfWin();
-        tieGame();
+        tieGame();*/
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jButton4.setText(whoseTurn);
+        /*jButton4.setText(whoseTurn);
         if(whoseTurn.equalsIgnoreCase("X"))
         {jButton4.setForeground(Color.pink);}
         else
         {jButton4.setForeground(Color.gray);}
         determinewhoseTurn();
         determineIfWin();
-        tieGame();
+        tieGame();*/
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        jButton5.setText(whoseTurn);
+        /*jButton5.setText(whoseTurn);
         if(whoseTurn.equalsIgnoreCase("X"))
         {jButton5.setForeground(Color.pink);}
         else
         {jButton5.setForeground(Color.gray);}
         determinewhoseTurn();
         determineIfWin();
-        tieGame();
+        tieGame();*/
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jButton3.setText(whoseTurn);
+        /*jButton3.setText(whoseTurn);
         if(whoseTurn.equalsIgnoreCase("X"))
         {jButton3.setForeground(Color.pink);}
         else
         {jButton3.setForeground(Color.gray);}
         determinewhoseTurn();
         determineIfWin();
-        tieGame();
+        tieGame();*/
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jButton2.setText(whoseTurn);
+        /*jButton2.setText(whoseTurn);
         if(whoseTurn.equalsIgnoreCase("X"))
         {jButton2.setForeground(Color.pink);}
         else
         {jButton2.setForeground(Color.gray);}
         determinewhoseTurn();
         determineIfWin();
-        tieGame();
+        tieGame();*/
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jButton1.setText(whoseTurn);
+        /*jButton1.setText(whoseTurn);
         if(whoseTurn.equalsIgnoreCase("X"))
         {jButton1.setForeground(Color.pink);}
         else
         {jButton1.setForeground(Color.gray);}
         determinewhoseTurn();
         determineIfWin();
-        tieGame();
+        tieGame();*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
